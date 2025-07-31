@@ -32,7 +32,7 @@ const ContactPage = () => {
     {
       icon: <MapPin size={32} />,
       title: 'Address',
-      content: 'BG8, Block B, 688 Gallagher Avenue, Gallagher Business Exchange, Halfway House, Midrand 1685',
+      content: '55 Richards Drive, Halfway House, Midrand, 1685',
       delay: 0
     },
     {

@@ -167,8 +167,8 @@ const ServicesPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-6 inline-block">Our Process</h2>
-            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-400/50 to-blue-600/50 rounded-full mb-6"></div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 inline-block">Our Process</h2>
+            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-gray-400 to-gray-600 rounded-full mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               A proven methodology that ensures successful project delivery and exceptional results.
             </p>
@@ -183,16 +183,16 @@ const ServicesPage = () => {
                 transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
                 className="group text-center relative"
               >
-                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 hover:border-blue-300/50 relative overflow-hidden group-hover:bg-gradient-to-br group-hover:from-blue-50 group-hover:to-blue-100/50">
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-400 mb-4 group-hover:from-blue-400 group-hover:to-blue-600 transition-all duration-300">
+                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 hover:border-gray-300/50 relative overflow-hidden group-hover:bg-gradient-to-br group-hover:from-gray-50 group-hover:to-gray-100/50">
+                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-800 mb-4 transition-all duration-300">
                     {step.step}
                   </div>
                   
-                  <div className="text-gray-700 mb-4 group-hover:text-blue-600 transition-colors duration-300 flex justify-center transform group-hover:scale-110 transition-transform">
+                  <div className="text-gray-700 mb-4 transition-colors duration-300 flex justify-center transform group-hover:scale-110 transition-transform">
                     {step.icon}
                   </div>
                   
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-300">
                     {step.title}
                   </h3>
                   
@@ -207,9 +207,9 @@ const ServicesPage = () => {
                 {/* Animated Connector Line */}
                 {index < process.length - 1 && (
                   <div className="hidden lg:flex absolute top-1/2 -right-4 w-8 items-center transform -translate-y-1/2">
-                    <div className="w-2 h-2 rounded-full bg-blue-400/50 animate-pulse"></div>
-                    <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-400/50 to-blue-300/30"></div>
-                    <div className="w-2 h-2 rounded-full bg-blue-300/30 animate-pulse"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-400/50 animate-pulse"></div>
+                    <div className="flex-1 h-0.5 bg-gradient-to-r from-gray-400/50 to-gray-300/30"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-300/30 animate-pulse"></div>
                   </div>
                 )}
               </motion.div>
