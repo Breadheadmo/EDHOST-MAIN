@@ -24,42 +24,49 @@ const Statistics = () => {
 
   const stats = [
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-10 h-10" />,
       value: '500+',
       label: 'Happy Clients',
       description: 'Trusted by businesses worldwide',
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 via-blue-400 to-cyan-400'
     },
     {
-      icon: <Star className="w-8 h-8" />,
+      icon: <Star className="w-10 h-10" />,
       value: '98%',
       label: 'Client Satisfaction',
       description: 'Based on client feedback',
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 via-purple-400 to-pink-400'
     },
     {
-      icon: <Code2 className="w-8 h-8" />,
+      icon: <Code2 className="w-10 h-10" />,
       value: '1000+',
       label: 'Projects Completed',
       description: 'Across various industries',
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-orange-500 via-orange-400 to-red-400'
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: <Award className="w-10 h-10" />,
       value: '50+',
       label: 'Industry Awards',
       description: 'Recognition for excellence',
-      gradient: 'from-green-500 to-emerald-500'
+      gradient: 'from-green-500 via-green-400 to-emerald-400'
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Our Impact in Numbers</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+              Our Impact in Numbers
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Delivering exceptional results and creating lasting impact for businesses around the world.
             </p>
           </div>
@@ -68,37 +75,40 @@ const Statistics = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-500 ${
+                className={`group relative overflow-hidden rounded-2xl p-8 backdrop-blur-lg border border-white/10 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 ${
                   isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+
+                {/* Glass Effect */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-white mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-white mb-6 transform group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                  <div className="space-y-3">
+                    <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-300">
                       {stat.value}
                     </div>
                     
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-2xl font-semibold text-white">
                       {stat.label}
                     </h3>
                     
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-lg">
                       {stat.description}
                     </p>
                   </div>
 
                   {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-white/5 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/5 rounded-full -ml-8 -mb-8 group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12 group-hover:scale-150 transition-transform duration-500"></div>
                 </div>
               </div>
             ))}

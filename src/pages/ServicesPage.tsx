@@ -188,7 +188,7 @@ const ServicesPage = () => {
                     {step.step}
                   </div>
                   
-                  <div className="text-gray-700 mb-4 transition-colors duration-300 flex justify-center transform group-hover:scale-110 transition-transform">
+                  <div className="text-gray-700 mb-4 flex justify-center transform group-hover:scale-110 transition-all duration-300">
                     {step.icon}
                   </div>
                   

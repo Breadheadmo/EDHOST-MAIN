@@ -29,27 +29,29 @@ const Header = () => {
   };
 
   return (
-    <>
-      {/* Logo positioned independently */}
-      <div className="fixed top-4 left-4 z-50">
-        <img 
-          src="/public/images/Logo/Trim.png" 
-          alt="EdHost Logo" 
-          className="w-12 h-12 object-contain cursor-pointer hover:scale-105 transition-all duration-300"
-          onClick={() => navigate('/')}
-        />
-      </div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-lg shadow-sm">
+      <div className="container mx-auto px-4 py-2 flex items-center">
+        {/* Logo */}
+        <div className="relative">
+          <img 
+            src="/public/images/Logo/Trim.png" 
+            alt="EdHost Logo" 
+            className="w-24 h-24 object-contain cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => navigate('/')}
+          />
+        </div>
 
-      {/* Tubelight Navigation */}
-      <NavBar 
-        items={navItems} 
-        onItemClick={handleNavClick}
-        currentPath={location.pathname}
-        className={`transition-all duration-300 ${
-          isScrolled ? 'backdrop-blur-xl' : ''
-        }`}
-      />
-    </>
+        {/* Centered Navigation */}
+        <div className="flex-grow flex justify-center">
+          <NavBar 
+            items={navItems} 
+            onItemClick={handleNavClick}
+            currentPath={location.pathname}
+            className={`transition-all duration-300 ${isScrolled ? 'backdrop-blur-xl' : ''}`}
+          />
+        </div>
+      </div>
+    </header>
   );
 };
 

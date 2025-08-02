@@ -6,19 +6,22 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import { ThemeProvider } from 'next-themes';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer />
-    </div>
+    <ThemeProvider attribute="class" defaultTheme="light">
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

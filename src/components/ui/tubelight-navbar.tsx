@@ -49,11 +49,11 @@ export function NavBar({ items, className, onItemClick, currentPath = '/' }: Nav
   return (
     <div
       className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6",
+        "relative", // Changed from fixed to relative
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-white/90 border border-gray-200 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-transparent py-1 px-1 rounded-full">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
