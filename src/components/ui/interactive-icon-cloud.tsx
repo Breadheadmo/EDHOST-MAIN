@@ -64,7 +64,7 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>
 
 export function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null)
-  const [theme, setTheme] = useState("light")
+  const { theme } = useTheme()
 
   useEffect(() => {
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData)
@@ -74,7 +74,7 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
     if (!data) return null
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme),
+      renderCustomIcon(icon, theme ?? 'light'),
     )
   }, [data, theme])
 

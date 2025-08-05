@@ -1,14 +1,13 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { DivideIcon as LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavItem {
   name: string
   url: string
-  icon: LucideIcon
+  icon: React.ElementType
 }
 
 interface NavBarProps {
@@ -20,7 +19,7 @@ interface NavBarProps {
 
 export function NavBar({ items, className, onItemClick, currentPath = '/' }: NavBarProps) {
   const [activeTab, setActiveTab] = useState('')
-  const [isMobile, setIsMobile] = useState(false)
+  const [, setIsMobile] = useState(false)
 
   useEffect(() => {
     const activeItem = items.find(item => item.url === currentPath)

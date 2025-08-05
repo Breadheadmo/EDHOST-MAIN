@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Code, Smartphone, Search, Wrench, Globe, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,39 +28,51 @@ const Services = () => {
       icon: <Globe size={32} />,
       title: 'Web App Development',
       description: 'Construct internet packages to help drive business growth.',
-      delay: 0
+      delay: 0,
+      id: 'web-development'
     },
     {
       icon: <Code size={32} />,
       title: 'Software Development',
       description: 'Solving custom software development problems for funded startups and enterprises.',
-      delay: 100
+      delay: 100,
+      id: 'software-development'
     },
     {
       icon: <Search size={32} />,
       title: 'Digital Marketing',
       description: 'Search Engine Optimization (SEO)…boosting quality & quantity of site visitors.',
-      delay: 200
+      delay: 200,
+      id: 'digital-marketing'
     },
     {
       icon: <Wrench size={32} />,
       title: 'Software Maintenance & Support',
       description: 'Continuously manage, support, improve and extend your software.',
-      delay: 300
+      delay: 300,
+      id: 'maintenance-support'
     },
     {
       icon: <Smartphone size={32} />,
       title: 'Mobile App Development',
       description: 'True value‑added mobile apps that help your business grow and thrive.',
-      delay: 400
+      delay: 400,
+      id: 'mobile-development'
     },
     {
       icon: <Users size={32} />,
       title: 'Hire Development Teams',
       description: 'Hire a superior, dedicated and managed engineering team for all your software needs.',
-      delay: 500
+      delay: 500,
+      id: 'development-teams'
     }
   ];
+
+  const navigate = useNavigate();
+
+  const handleLearnMore = (serviceId: string) => {
+    navigate(`/services/${serviceId}`);
+  };
 
   return (
     <section id="services" ref={sectionRef} className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -93,13 +106,16 @@ const Services = () => {
                   {service.description}
                 </p>
                 
-                <button className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-all duration-300 group-hover:translate-x-1 relative">
+                <button 
+                  onClick={() => handleLearnMore(service.id)}
+                  className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-all duration-300 group-hover:translate-x-1 relative"
+                >
                   <span className="border-b border-gray-300 group-hover:border-gray-700 transition-colors duration-300">
                     Learn More
                   </span>
                   
                   {/* Enhanced Shimmer effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -skew-x-12"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -skew-x-12"></div>
                 </button>
                 {/* Card Shimmer effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -skew-x-12 pointer-events-none"></div>

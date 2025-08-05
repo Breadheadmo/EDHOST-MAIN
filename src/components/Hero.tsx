@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
@@ -20,7 +20,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden pt-20">
       {/* Floating particles for extra ambiance */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-2 h-2 bg-gray-400/30 rounded-full animate-pulse"></div>
