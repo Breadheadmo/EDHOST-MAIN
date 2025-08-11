@@ -36,16 +36,9 @@ const Hero = () => {
               className="-top-40 left-0 md:left-60 md:-top-20"
               fill="white"
             />
-            
             <div className="flex h-full flex-col lg:flex-row">
               {/* Left content */}
               <div className="flex-1 p-8 lg:p-12 relative z-10 flex flex-col justify-center">
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-gray-800/50 text-gray-300 text-sm rounded-full border border-gray-700/50 backdrop-blur-sm">
-                    💻 Professional Technology Solutions
-                  </span>
-                </div>
-
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-tight mb-6">
                   We create sophisticated
                   <br />

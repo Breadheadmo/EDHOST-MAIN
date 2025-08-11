@@ -34,7 +34,7 @@ const Header = () => {
         {/* Logo */}
         <div className="relative">
           <img 
-            src="/public/images/Logo/Trim.png" 
+            src="/images/Logo/Trim.png" 
             alt="EdHost Logo" 
             className="w-24 h-24 object-contain cursor-pointer hover:scale-105 transition-all duration-300"
             onClick={() => navigate('/')}
