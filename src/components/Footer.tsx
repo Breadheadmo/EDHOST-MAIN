@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import logoImage from '../images/Logo/Trim.png';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Footer = () => {
               className="flex items-center space-x-2 cursor-pointer group"
             >
               <img 
-                src="/public/images/Logo/Trim.png" 
+                src={logoImage} 
                 alt="EdHost Logo" 
                 className="w-12 h-12 object-contain cursor-pointer hover:scale-105 transition-all duration-300"
               />
